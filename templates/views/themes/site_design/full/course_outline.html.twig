@@ -1,5 +1,18 @@
-{# % extends "app:pagelayout.html.twig" % #}
+{% extends "document.html.twig" %}
 {% block content %}
 <h1>{{ ez_content_name( content ) }}</h1>
-<div>{{  ez_render_field(content, 'name') }}</div>
+<dl>
+<dt>{{ 'Course Number'|trans }}</dt>
+<dd>{{  ez_render_field(content, 'course_number') }}</dd>
+<dt>{{ 'Course Name'|trans }}</dt>
+<dd>{{  ez_render_field(content, 'course_name') }}</dd>
+<dt>{{ 'Hours'|trans }}</dt>
+<dd><em>{{ 'Lecture'|trans }}</em> {{  ez_render_field(content, 'lecture_hours') }}
+<em>{{ 'Lab'|trans }}</em> {{  ez_render_field(content, 'lab_hours') }}
+<em>{{ 'Credit'|trans }}</em> {{  ez_render_field(content, 'credit_hours') }}</dd>
+<dt>{{ 'Description'|trans }}</dt>
+<dd>{{  ez_render_field(content, 'description') }}</dd>
+<dt>{{ 'Course Competencies'|trans }}</dt>
+<dd>{{  ez_render_field(content, 'course_competencies') }}</dd>
+</dl>
 {% endblock %}

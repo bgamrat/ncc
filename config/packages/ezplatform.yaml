@@ -140,4 +140,3 @@ ezpublish:
                         template: '@ezdesign/full/course_outline.html.twig'
                         match: 
                             Identifier\ContentType: [course_outline]
-                            

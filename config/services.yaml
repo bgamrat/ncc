@@ -29,4 +29,3 @@ services:
     App\QueryType\LocationChildrenQueryType:
         tags:
             - { name: ezpublish.query_type }
-

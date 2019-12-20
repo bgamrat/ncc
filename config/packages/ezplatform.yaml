@@ -128,7 +128,7 @@ ezpublish:
                     sign:
                         template: '@ezdesign/full/sign.html.twig'
                         match: 
-                            Id\Content: 53
+                            Id\Content: 61
                         controller: ez_query:locationQueryAction
                         params:
                             query:

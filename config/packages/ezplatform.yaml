@@ -136,7 +136,16 @@ ezpublish:
                                 parameters:
                                     parentLocationId: '@=location.id'
                                 assign_results_to: items
-                    course_outline:
-                        template: '@ezdesign/full/course_outline.html.twig'
+                    course:
+                        controller: App\Controller\DefaultController::courseViewEnhancedAction
+                        template: '@ezdesign/full/course.html.twig'
                         match: 
-                            Identifier\ContentType: [course_outline]
+                            Identifier\ContentType: [course]
+                    syllabus:
+                        controller: App\Controller\DefaultController::syllabusViewEnhancedAction
+                        template: '@ezdesign/full/syllabus.html.twig'
+                        match:
+                            Identifier\ContentType: [syllabus]
+                        params:
+                            availableSupportServices: 70
+                            collegePolicies: 52

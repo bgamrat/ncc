@@ -1,0 +1,21 @@
+.course-outline-header .row .col p {
+    padding: 0;
+    margin: 0;
+}
+.course-competencies table,
+.course-outline table,
+.revision-history table {
+    width: 100%;
+    margin: 15px 0;
+}
+.course-competencies table tr,
+.course-outline table tr,
+.revision-history table tr {
+    border: 1px solid;
+}
+.course-competencies table td,
+.course-outline table td,
+.revision-history table td {
+    border: 1px solid;
+    padding: 3px;
+}

@@ -10,9 +10,10 @@ Encore.setOutputPath('public/assets/build')
     .setPublicPath('/assets/build')
     .enableSassLoader()
     .enableReactPreset()
-    //.addStyleEntry('app-css','./assets/css/app.css')
     //.enableVueLoader()
-    .addEntry('app', './assets/js/clock.js')
+    .addEntry('app', './assets/js/app.js')
+    .addEntry('content', './assets/js/content.js')
+    .addEntry('sign', './assets/js/sign.js')
     .enableSingleRuntimeChunk();
 
 const projectConfig = Encore.getWebpackConfig();

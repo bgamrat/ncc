@@ -1,4 +1,5 @@
 require ('../css/app.css');
+require ('../css/sign.css');
 
 var dateTime = document.getElementById("date-time");
 

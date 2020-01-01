@@ -1,25 +1,17 @@
-.course-outline-header .row .col p,
-.syllabus-header .row .col p {
+.course-outline-header p,
+.syllabus-header p {
     padding: 0;
     margin: 0;
 }
-.course-competencies table,
-.course-outline table,
-.revision-history table {
+table.with-borders {
     width: 100%;
     margin: 15px 0;
 }
-.course-competencies table tr,
-.course-outline table tr,
-.revision-history table tr {
+table.with-borders tr {
     border: 1px solid;
 }
-.course-competencies table th,
-.course-outline table th,
-.revision-history table th,
-.course-competencies table td,
-.course-outline table td,
-.revision-history table td {
+table.with-borders th,
+table.with-borders td {
     border: 1px solid;
     padding: 3px;
 }

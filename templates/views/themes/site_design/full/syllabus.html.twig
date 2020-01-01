@@ -99,7 +99,7 @@
     <section class="course-competencies row my-3">
         <div class="col">
             <h2>{{ 'Course Competencies' | trans }}</h2>
-            {{ ez_render_field(course, 'course_competencies') }}
+            {{ ez_render_field(course, 'course_competencies', { 'attr': { 'class': 'with-borders'}}) }}
         </div>
     </section>
     <section class="row my-3">
@@ -110,7 +110,7 @@
     </section>
     <section class="row my-3">
         <div class="col">
-            <h2>{{ 'Required Textbook' | trans }}</h2>
+            <h2>{{ 'Required Textbook(s)' | trans }}</h2>
             {{ ez_render_field(content, 'required_textbook') }}
         </div>
     </section>
@@ -147,7 +147,7 @@
     <section class="course-outline row my-3">
         <div class="col">
             <h2>{{ 'Course Calendar' | trans }}</h2>
-            {{ ez_render_field(content, 'course_calendar') }}
+            {{ ez_render_field(content, 'course_calendar', { 'attr': { 'class': 'with-borders'}}) }}
         </div>
     </section>
 </article>

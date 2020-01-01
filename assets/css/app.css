@@ -9,19 +9,17 @@ body {
     --heading-color: #499f8c;
 }
 .page-header {
-    height: 130px;
     border-bottom: 1px solid var(--main-logo-color);
     background-color: var(--header-footer-bg-color);
     padding: 10px;
 }
 .page-header h1 {
     color: var(--heading-color);
-    line-height: 100px;
+    /*line-height: 100px;*/
     font-variant: small-caps;
     font-weight: 900;
 }
 #main-content {
-    margin-top:155px;
     padding: 15px;
     overflow-x: auto;
     background-color: #fff;

@@ -1,10 +1,13 @@
 {% extends "@ezdesign/document.html.twig" %}
 {% block content %}
-<header class="fixed-top page-header row">
+<header class="page-header row">
     <span class="col-md">
         <img src="{{ asset("/assets/images/logo.jpg") }}" class="img-fluid" alt="NCC logo">
     </span>
-    <h1 class="col text-right">{{ ez_content_name( content ) }}</h1>
+    <h1 class="col-md text-right">
+        {{ ez_content_name( content ) }}<br>
+        <small>{{ ez_render_field(content, 'course_title') }}</small>
+    </h1>
 </header>
 <article class="container" id="main-content">
     <h2 class="d-inline-block">{{ 'Course Outline' | trans }}</h2>
@@ -99,7 +102,7 @@
     <section class="row course-competencies my-3 border border-secondary">
         <div class="col">
             <strong>{{ 'Course Competencies'|trans }}</strong>
-            {{ ez_render_field(content, 'course_competencies', { 'attr': { 'class': 'border border-light'}}) }}
+            {{ ez_render_field(content, 'course_competencies', { 'attr': { 'class': 'with-borders'}}) }}
         </div>
     </section>
     <section class="row course-outline my-3 border border-secondary">
@@ -129,7 +132,7 @@
     <section class="row revision-history my-3 border border-secondary">
         <div class="col">
             <strong>{{ 'Revision History'|trans }}</strong>
-            {{ ez_render_field(content, 'revision_history') }}
+            {{ ez_render_field(content, 'revision_history', { 'attr': { 'class': 'with-borders'}}) }}
         </div>
     </section>
 </article>

@@ -122,12 +122,12 @@ ezpublish:
                 line:
                     article:
                         template: '@ezdesign/line/article.html.twig'
-                        match: 
+                        match:
                             Identifier\ContentType: [article]
                 full:
                     sign:
                         template: '@ezdesign/full/sign.html.twig'
-                        match: 
+                        match:
                             Id\Content: 61
                         controller: ez_query:locationQueryAction
                         params:
@@ -139,13 +139,35 @@ ezpublish:
                     course:
                         controller: App\Controller\DefaultController::courseViewEnhancedAction
                         template: '@ezdesign/full/course.html.twig'
-                        match: 
+                        match:
                             Identifier\ContentType: [course]
+                    department:
+                        template: '@ezdesign/full/department.html.twig'
+                        match:
+                            Identifier\ContentType: [department,program]
+                        controller: ez_query:locationQueryAction
+                        params:
+                            query:
+                                query_type: LocationChildren
+                                parameters:
+                                    parentLocationId: '@=location.id'
+                                assign_results_to: items
+                    folder:
+                        template: '@ezdesign/full/folder.html.twig'
+                        match:
+                            Identifier\ContentType: [folder]
+                        controller: ez_query:locationQueryAction
+                        params:
+                            query:
+                                query_type: LocationChildren
+                                parameters:
+                                    parentLocationId: '@=location.id'
+                                assign_results_to: items
                     syllabus:
                         controller: App\Controller\DefaultController::syllabusViewEnhancedAction
                         template: '@ezdesign/full/syllabus.html.twig'
                         match:
                             Identifier\ContentType: [syllabus]
                         params:
-                            availableSupportServices: 70
-                            collegePolicies: 52
+                            availableSupportServicesId: 70
+                            collegePoliciesId: 52

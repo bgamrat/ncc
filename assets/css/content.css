@@ -1,4 +1,5 @@
-.course-outline-header .row .col p {
+.course-outline-header .row .col p,
+.syllabus-header .row .col p {
     padding: 0;
     margin: 0;
 }
@@ -13,6 +14,9 @@
 .revision-history table tr {
     border: 1px solid;
 }
+.course-competencies table th,
+.course-outline table th,
+.revision-history table th,
 .course-competencies table td,
 .course-outline table td,
 .revision-history table td {

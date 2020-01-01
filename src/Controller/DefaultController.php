@@ -32,16 +32,19 @@ class DefaultController extends Controller {
         return $view;
     }
 
-    public function syllabusViewEnhancedAction(ContentView $view, int $availableSupportServices, int $collegePolicies) {
+    public function syllabusViewEnhancedAction(ContentView $view, int $availableSupportServicesId, int $collegePoliciesId) {
         $location = $view->getLocation();
         $content = $view->getContent();
         $course = $content->getField('course');
-        $courseContent = $this->contentService->loadContent($course->value->destinationContentId)->getVersionInfo()->getContentInfo();
-        $courseLocation = $this->locationService->loadLocation($courseContent->mainLocationId);
-
-        $view->addParameters($this->_getRelated($courseLocation));
-        $view->addParameters(['availableSupportServicesId' => $availableSupportServices,
-            'collegePoliciesId' => $collegePolicies]);
+        $courseContent = $this->contentService->loadContent($course->value->destinationContentId);
+        $courseContentInfo = $courseContent->getVersionInfo()->getContentInfo();
+        $courseLocation = $this->locationService->loadLocation($courseContentInfo->mainLocationId);
+        $parameters = $this->_getRelated($courseLocation);
+        $view->addParameters($parameters);
+        $view->addParameters(['availableSupportServices' => $this->contentService->loadContent($availableSupportServicesId),
+            'collegePolicies' => $this->contentService->loadContent($collegePoliciesId),
+            'departmentPolicies' => $this->contentService->loadContent($parameters['departmentPoliciesId']),
+            'courseContentInfo' => $courseContentInfo, 'course' => $courseContent]);
         return $view;
     }
 
@@ -69,13 +72,12 @@ class DefaultController extends Controller {
             new Criterion\Field('title', Operator::EQ, 'Department Policies')
                 ]
         );
-
         $results = $this->searchService->findContentInfo($query);
         $items = [];
         foreach ($results->searchHits as $searchHit) {
             $items[] = $searchHit;
         }
-        $departmentPoliciesId = $items[0]->valueObject->mainLocationId;
+        $departmentPoliciesId = $items[0]->valueObject->id;
 
         return ['departmentId' => $departmentId, 'programId' => $programId, 'departmentPoliciesId' => $departmentPoliciesId];
     }

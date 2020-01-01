@@ -11,7 +11,7 @@
                     <th>
                         <h1>
                             {{ ez_render_field(course, 'course_number') }}<br>
-                            {{ ez_render_field(course, 'course_title') }}
+                            <small>{{ ez_render_field(course, 'course_title') }}</small>
                         </h1>
                     </th>
                 </tr>
@@ -128,7 +128,7 @@
     </section>
     <section class="row my-3">
         <div class="col">
-            <h2>{{ 'Available Support Services' | trans }}</h2>
+            <h2 class="policies">{{ 'Available Support Services' | trans }}</h2>
             {{ ez_render_field(availableSupportServices, 'body') }}
         </div>
     </section>

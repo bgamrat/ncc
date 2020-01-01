@@ -1,8 +1,5 @@
 body {
     font-family: 'Open Sans',sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100%;
     /* Colors */
     --main-logo-color: #02448b;
     --header-footer-bg-color: #fff;

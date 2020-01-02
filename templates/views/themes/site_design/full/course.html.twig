@@ -80,13 +80,15 @@
             {{ ez_render_field(content, 'accuplacer') }}
         </div>
         {% endif %}
-        {% if not ez_field_is_empty(content,'prerequisites_corequisites_text') %}
-        <div class="col">
-            <strong>{{ 'Prerequisites / Corequisites'|trans }}</strong>
-            {{ ez_render_field(content, 'prerequisites_corequisites_text') }}
-        </div>
-        {% endif %}
     </section>
+    {% if not ez_field_is_empty(content,'prerequisites_corequisites_text') %}
+        <section class="row my-3 border border-secondary">
+            <div class="col">
+                <strong>{{ 'Prerequisites / Corequisites'|trans }}</strong>
+                {{ ez_render_field(content, 'prerequisites_corequisites_text') }}
+            </div>
+        </section>
+    {% endif %}
     <section class="row my-3 border border-secondary">
         <div class="col">
             <strong>{{ 'Entrance Skills'|trans }}</strong>

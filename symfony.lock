@@ -226,9 +226,6 @@
     "fabpot/goutte": {
         "version": "v3.2.3"
     },
-    "fig/link-util": {
-        "version": "1.0.0"
-    },
     "friendsofsymfony/http-cache": {
         "version": "2.7.0"
     },
@@ -625,6 +622,9 @@
     },
     "symfony/dotenv": {
         "version": "v4.3.4"
+    },
+    "symfony/error-handler": {
+        "version": "v4.4.1"
     },
     "symfony/event-dispatcher": {
         "version": "v4.3.4"

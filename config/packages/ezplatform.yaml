@@ -171,3 +171,4 @@ ezpublish:
                         params:
                             availableSupportServicesId: 70
                             collegePoliciesId: 52
+                            gradingScheme: 85

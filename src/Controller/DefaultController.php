@@ -32,7 +32,8 @@ class DefaultController extends Controller {
         return $view;
     }
 
-    public function syllabusViewEnhancedAction(ContentView $view, int $availableSupportServicesId, int $collegePoliciesId) {
+    public function syllabusViewEnhancedAction(ContentView $view,
+            int $availableSupportServicesId, int $collegePoliciesId, int $gradingScheme) {
         $location = $view->getLocation();
         $content = $view->getContent();
         $course = $content->getField('course');
@@ -41,10 +42,14 @@ class DefaultController extends Controller {
         $courseLocation = $this->locationService->loadLocation($courseContentInfo->mainLocationId);
         $parameters = $this->_getRelated($courseLocation);
         $view->addParameters($parameters);
-        $view->addParameters(['availableSupportServices' => $this->contentService->loadContent($availableSupportServicesId),
+        $view->addParameters([
+            'availableSupportServices' => $this->contentService->loadContent($availableSupportServicesId),
             'collegePolicies' => $this->contentService->loadContent($collegePoliciesId),
             'departmentPolicies' => $this->contentService->loadContent($parameters['departmentPoliciesId']),
-            'courseContentInfo' => $courseContentInfo, 'course' => $courseContent]);
+            'gradingScheme' => $this->contentService->loadContent($gradingScheme),
+            'courseContentInfo' => $courseContentInfo,
+            'course' => $courseContent
+        ]);
         return $view;
     }
 

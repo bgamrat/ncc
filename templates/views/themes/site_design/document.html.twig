@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %}{{ ez_content_name( content ) }}{% endblock %}</title>
-	<base href="https://c.nashuaweb.net/">
+        <base href="https://c.nashuaweb.net/">
         {% block stylesheets %}
             <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
             <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
@@ -16,6 +16,9 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     </head>
     <body role="document">
+        <div class="sticky-top no-print text-right">
+            <a download href="{{pdf_dir}}{{ path( location ) }}.pdf">{{ 'Download PDF' | trans }}</a>
+        </div>
         {% block content %}
         {% endblock %}
         {% block javascripts %}

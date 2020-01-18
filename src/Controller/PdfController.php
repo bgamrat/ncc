@@ -7,15 +7,15 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class PdfController {
 
-    private $basePath;
+    private $baseDir;
 
-    public function __construct(String $basePath, String $baseDir) {
-        $this->basePath = $basePath . '/' . $baseDir . '/';
+    public function __construct(String $baseDir) {
+        $this->baseDir = $baseDir;
     }
 
     public function pdfViewAction(Request $request) {
         $path = $request->get('path');
-        return new BinaryFileResponse($this->basePath . $path);
+        return new BinaryFileResponse($this->baseDir . '/' . $path);
     }
 
 }

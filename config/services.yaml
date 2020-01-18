@@ -34,15 +34,20 @@ services:
         arguments:
             $pdfOnPublish: [ 13, 17 ]
             $router: '@ezpublish.urlalias_router'
-            $basePath: '%kernel.project_dir%'
-            $baseDir: public/pdf
+            $basePath: '%kernel.project_dir%/public/pdf'
         tags:
             - { name: kernel.event_listener, event: content.edit.publish, method: onPublishVersionEvent }
-            
+
+    App\Controller\DefaultController:
+        arguments:
+            $baseDir: '%kernel.project_dir%/public'
+            $basePath: pdf
+            $router: '@ezpublish.urlalias_router'
+        tags: ['controller.service_arguments']
+        
     App\Controller\PdfController:
         arguments:
-            $basePath: '%kernel.project_dir%'
-            $baseDir: public/pdf
+            $baseDir: '%kernel.project_dir%/public/pdf'
         tags: ['controller.service_arguments']
 
 

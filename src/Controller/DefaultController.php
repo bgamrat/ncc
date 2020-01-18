@@ -11,17 +11,26 @@ use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
 use eZ\Publish\Core\MVC\Symfony\View\ContentView;
 use eZ\Publish\Core\Repository\Values\Content\Location;
+use Knp\Snappy\Pdf as KnpSnappyPdf;
+use eZ\Bundle\EzPublishCoreBundle\Routing\UrlAliasRouter;
 
 class DefaultController extends Controller {
 
     private $locationService;
     private $contentService;
     private $searchService;
+    private $basePath;
+    private $baseDir;
 
-    public function __construct(LocationService $locationService, ContentService $contentService, SearchService $searchService) {
+    public function __construct(UrlAliasRouter $router, String $baseDir, String $basePath, KnpSnappyPdf $knpSnappyPdf, LocationService $locationService, ContentService $contentService, SearchService $searchService) {
         $this->locationService = $locationService;
         $this->contentService = $contentService;
         $this->searchService = $searchService;
+        $this->knpSnappyPdf = $knpSnappyPdf;
+        $this->baseDir = $baseDir . '/' . $basePath;
+        $this->basePath = $basePath;
+        $this->router = $router;
+        $this->knpSnappyPdf = $knpSnappyPdf;
     }
 
     public function courseViewEnhancedAction(ContentView $view) {
@@ -38,16 +47,19 @@ class DefaultController extends Controller {
         $courseContent = $this->contentService->loadContent($course->value->destinationContentId);
         $courseContentInfo = $courseContent->getVersionInfo()->getContentInfo();
         $courseLocation = $this->locationService->loadLocation($courseContentInfo->mainLocationId);
+        $url = $this->router->generate($location);
         $parameters = $this->_getRelated($courseLocation);
-        $view->addParameters($parameters);
-        $view->addParameters([
+        $parameters = $parameters + [
             'availableSupportServices' => $this->contentService->loadContent($availableSupportServicesId),
             'collegePolicies' => $this->contentService->loadContent($collegePoliciesId),
             'departmentPolicies' => $this->contentService->loadContent($parameters['departmentPoliciesId']),
             'gradingScheme' => $this->contentService->loadContent($gradingSchemeId),
             'courseContentInfo' => $courseContentInfo,
             'course' => $courseContent
-        ]);
+        ];
+        $view->addParameters($parameters);
+
+        $this->_makePdf($view, $url);
         return $view;
     }
 
@@ -83,6 +95,17 @@ class DefaultController extends Controller {
         $departmentPoliciesId = $items[0]->valueObject->id;
 
         return ['departmentId' => $departmentId, 'programId' => $programId, 'departmentPoliciesId' => $departmentPoliciesId];
+    }
+
+    private function _makePdf(ContentView $view, String $path) {
+        $pdfFilename = $this->baseDir . $path . '.pdf';
+        if (!is_file($pdfFilename)) {
+            $html = $this->render($view->getTemplateIdentifier(), $view->getParameters());
+            $this->knpSnappyPdf->generateFromHtml(
+                    $html->getContent(),
+                    $pdfFilename
+            );
+        }
     }
 
 }

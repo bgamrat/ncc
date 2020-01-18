@@ -29,3 +29,20 @@ services:
     App\QueryType\LocationChildrenQueryType:
         tags:
             - { name: ezpublish.query_type }
+
+    App\EventListener\PublishListener:
+        arguments:
+            $pdfOnPublish: [ 13, 17 ]
+            $router: '@ezpublish.urlalias_router'
+            $basePath: '%kernel.project_dir%'
+            $baseDir: public/pdf
+        tags:
+            - { name: kernel.event_listener, event: content.edit.publish, method: onPublishVersionEvent }
+            
+    App\Controller\PdfController:
+        arguments:
+            $basePath: '%kernel.project_dir%'
+            $baseDir: public/pdf
+        tags: ['controller.service_arguments']
+
+

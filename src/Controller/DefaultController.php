@@ -11,8 +11,6 @@ use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
 use eZ\Publish\Core\MVC\Symfony\View\ContentView;
 use eZ\Publish\Core\Repository\Values\Content\Location;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller {
 
@@ -33,7 +31,7 @@ class DefaultController extends Controller {
     }
 
     public function syllabusViewEnhancedAction(ContentView $view,
-            int $availableSupportServicesId, int $collegePoliciesId, int $gradingScheme) {
+            int $availableSupportServicesId, int $collegePoliciesId, int $gradingSchemeId) {
         $location = $view->getLocation();
         $content = $view->getContent();
         $course = $content->getField('course');
@@ -46,7 +44,7 @@ class DefaultController extends Controller {
             'availableSupportServices' => $this->contentService->loadContent($availableSupportServicesId),
             'collegePolicies' => $this->contentService->loadContent($collegePoliciesId),
             'departmentPolicies' => $this->contentService->loadContent($parameters['departmentPoliciesId']),
-            'gradingScheme' => $this->contentService->loadContent($gradingScheme),
+            'gradingScheme' => $this->contentService->loadContent($gradingSchemeId),
             'courseContentInfo' => $courseContentInfo,
             'course' => $courseContent
         ]);

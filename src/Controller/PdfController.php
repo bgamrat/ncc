@@ -4,8 +4,9 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class PdfController {
+class PdfController extends AbstractController {
 
     private $baseDir;
 
@@ -15,6 +16,10 @@ class PdfController {
 
     public function pdfViewAction(Request $request) {
         $path = $request->get('path');
+        $filename = $this->baseDir . '/' . $path;
+        if (!is_file($filename)) {
+           return $this->redirect(preg_replace('#^([^\.]+)\.pdf$#','/$1',$path));
+        }
         return new BinaryFileResponse($this->baseDir . '/' . $path);
     }
 

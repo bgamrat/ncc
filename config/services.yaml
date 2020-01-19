@@ -32,7 +32,7 @@ services:
 
     App\EventListener\PublishListener:
         arguments:
-            $pdfOnPublish: [ 13, 17 ]
+            $pdfOnPublish: '%pdf_available%'
             $router: '@ezpublish.urlalias_router'
             $basePath: '%kernel.project_dir%/public/pdf'
         tags:

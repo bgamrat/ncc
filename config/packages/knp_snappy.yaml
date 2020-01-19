@@ -1,0 +1,20 @@
+knp_snappy:
+    temporary_folder: "%kernel.cache_dir%/snappy"
+    pdf:
+        enabled:    true
+        binary:     '%env(WKHTMLTOPDF_PATH)%'
+        options:
+            - { name: 'print-media-type', value: null }
+            - { name: 'margin-left', value: '.5in' }
+            - { name: 'margin-right', value: '.5in' }
+            - { name: 'margin-top', value: '.5in' }
+            - { name: 'margin-bottom', value: '.5in' }
+            - { name: 'footer-center', value: 'Page [page] of [topage]' }
+            - { name: 'footer-font-name', value: 'Open Sans' }
+            - { name: 'footer-font-size', value: '8' }
+            - { name: 'footer-right', value: 'Updated [date]' }
+        
+    image:
+        enabled:    true
+        binary:     '%env(WKHTMLTOIMAGE_PATH)%'
+        options:    []

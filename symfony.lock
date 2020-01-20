@@ -184,6 +184,9 @@
     "ezsystems/ezplatform-admin-ui-modules": {
         "version": "v2.0.0-beta3"
     },
+    "ezsystems/ezplatform-content-forms": {
+        "version": "1.0.x-dev"
+    },
     "ezsystems/ezplatform-core": {
         "version": "v2.0.0-beta3"
     },

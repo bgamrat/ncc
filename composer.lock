@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "38be63af1bcd52ec731c87fbd6643386",
+    "content-hash": "dd656fe027bfdf22eb7604d722addd94",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -1453,16 +1453,16 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "1.7.4",
+            "version": "1.8.0-beta-7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3"
+                "reference": "fe7a50eceb4a3c867cc9fa9c0aa906b1067d1955"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
-                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/fe7a50eceb4a3c867cc9fa9c0aa906b1067d1955",
+                "reference": "fe7a50eceb4a3c867cc9fa9c0aa906b1067d1955",
                 "shasum": ""
             },
             "require": {
@@ -1495,7 +1495,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2019-12-30T22:54:17+00:00"
+            "time": "2019-03-17T18:47:21+00:00"
         },
         {
             "name": "ezsystems/doctrine-dbal-schema",
@@ -1600,16 +1600,16 @@
         },
         {
             "name": "ezsystems/ezplatform-admin-ui",
-            "version": "v2.0.0-beta3",
+            "version": "v2.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-admin-ui.git",
-                "reference": "0c8f9c980c749073b8c02baa9c8cdf404a2d9afa"
+                "reference": "53333d19f7ff31e847b182b496a2e586de21f757"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-admin-ui/zipball/0c8f9c980c749073b8c02baa9c8cdf404a2d9afa",
-                "reference": "0c8f9c980c749073b8c02baa9c8cdf404a2d9afa",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-admin-ui/zipball/53333d19f7ff31e847b182b496a2e586de21f757",
+                "reference": "53333d19f7ff31e847b182b496a2e586de21f757",
                 "shasum": ""
             },
             "require": {
@@ -1668,7 +1668,7 @@
                 "GPL-2.0-only"
             ],
             "description": "eZ Platform Admin v2",
-            "time": "2019-10-01T18:12:49+00:00"
+            "time": "2019-09-30T18:19:32+00:00"
         },
         {
             "name": "ezsystems/ezplatform-admin-ui-assets",
@@ -1755,17 +1755,78 @@
             "time": "2019-12-23T09:18:57+00:00"
         },
         {
-            "name": "ezsystems/ezplatform-core",
-            "version": "v2.0.0-beta3",
+            "name": "ezsystems/ezplatform-content-forms",
+            "version": "v1.0.0-beta1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ezsystems/ezplatform-core.git",
-                "reference": "26590a033dda5ab3fdd66a4066a7d098533e2c2e"
+                "url": "https://github.com/ezsystems/ezplatform-content-forms.git",
+                "reference": "ffb00e0b794de13c7f04b259f86d758ea78400b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-core/zipball/26590a033dda5ab3fdd66a4066a7d098533e2c2e",
-                "reference": "26590a033dda5ab3fdd66a4066a7d098533e2c2e",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-content-forms/zipball/ffb00e0b794de13c7f04b259f86d758ea78400b0",
+                "reference": "ffb00e0b794de13c7f04b259f86d758ea78400b0",
+                "shasum": ""
+            },
+            "require": {
+                "ezsystems/ezpublish-kernel": "^8.0",
+                "jms/translation-bundle": "^1.4",
+                "php": "^7.3",
+                "symfony/config": "^4.3",
+                "symfony/dependency-injection": "^4.2",
+                "symfony/event-dispatcher": "^4.3",
+                "symfony/filesystem": "^4.3",
+                "symfony/form": "^4.3",
+                "symfony/http-foundation": "^4.3",
+                "symfony/http-kernel": "^4.3",
+                "symfony/options-resolver": "^4.3",
+                "symfony/routing": "^4.3",
+                "symfony/translation": " ^4.3",
+                "symfony/validator": "^4.3",
+                "symfony/yaml": "^4.3"
+            },
+            "require-dev": {
+                "behat/behat": "^3.5",
+                "ezsystems/ezplatform-code-style": "^0.1.0",
+                "friendsofphp/php-cs-fixer": "^2.16.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.0",
+                "phpunit/phpunit": "^8.2"
+            },
+            "type": "ezplatform-bundle",
+            "extra": {
+                "_ezplatform_branch_for_behat_tests_comment_": "ezplatform branch to use to run Behat tests",
+                "_ezplatform_branch_for_behat_tests": "master",
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev",
+                    "dev-tmp_ci_branch": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "EzSystems\\EzPlatformContentFormsBundle\\": "src/bundle/",
+                    "EzSystems\\EzPlatformContentForms\\": "src/lib/",
+                    "EzSystems\\EzPlatformContentForms\\Features\\": "features/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "description": "Use Symfony Forms with eZ Platform Content & User objects",
+            "time": "2019-12-23T13:34:21+00:00"
+        },
+        {
+            "name": "ezsystems/ezplatform-core",
+            "version": "v2.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezsystems/ezplatform-core.git",
+                "reference": "667a9b10e7ca6807073d2c0ad50d075f3a9d061f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-core/zipball/667a9b10e7ca6807073d2c0ad50d075f3a9d061f",
+                "reference": "667a9b10e7ca6807073d2c0ad50d075f3a9d061f",
                 "shasum": ""
             },
             "require": {
@@ -1803,7 +1864,7 @@
                 }
             ],
             "description": "eZ Platform core bundles container",
-            "time": "2019-10-02T14:41:01+00:00"
+            "time": "2019-09-30T15:55:02+00:00"
         },
         {
             "name": "ezsystems/ezplatform-cron",
@@ -1925,23 +1986,24 @@
         },
         {
             "name": "ezsystems/ezplatform-graphql",
-            "version": "v2.0.0-beta2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-graphql.git",
-                "reference": "38b7eb233cec6ddc1ef45516e3cee125fbc43b61"
+                "reference": "5e13c6f9e8386adfc9769fd75e70aba86e28c85a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-graphql/zipball/38b7eb233cec6ddc1ef45516e3cee125fbc43b61",
-                "reference": "38b7eb233cec6ddc1ef45516e3cee125fbc43b61",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-graphql/zipball/5e13c6f9e8386adfc9769fd75e70aba86e28c85a",
+                "reference": "5e13c6f9e8386adfc9769fd75e70aba86e28c85a",
                 "shasum": ""
             },
             "require": {
                 "erusev/parsedown": "^1.7",
-                "ezsystems/ezplatform-admin-ui": "^2.0",
-                "ezsystems/ezplatform-richtext": "^2.0",
-                "ezsystems/ezpublish-kernel": "^8.0",
+                "ext-dom": "*",
+                "ezsystems/ezplatform-admin-ui": "^2.0@dev",
+                "ezsystems/ezplatform-richtext": "^2.0@dev",
+                "ezsystems/ezpublish-kernel": "^8.0@dev",
                 "overblog/graphql-bundle": "^0.11",
                 "php": "^7.3",
                 "symfony/config": "^4.3",
@@ -1957,7 +2019,8 @@
                 "bdunogier/ezplatform-graphql-bundle": "self.version"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "~2.15.1",
+                "ezsystems/ezplatform-code-style": "^0.1.0",
+                "friendsofphp/php-cs-fixer": "^2.16.0",
                 "mikey179/vfsstream": "^1.6",
                 "overblog/graphiql-bundle": "^0.1",
                 "phpspec/phpspec": "^5.1"
@@ -1984,7 +2047,7 @@
                 }
             ],
             "description": "GraphQL server for the eZ Platform Open Source CMS Repository.",
-            "time": "2019-09-30T18:27:53+00:00"
+            "time": "2020-01-14T15:54:30+00:00"
         },
         {
             "name": "ezsystems/ezplatform-http-cache",
@@ -2053,20 +2116,22 @@
         },
         {
             "name": "ezsystems/ezplatform-matrix-fieldtype",
-            "version": "v2.0.0-beta2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-matrix-fieldtype.git",
-                "reference": "c8c2f9842b979163849f7eaf3f16ad277c1d4d73"
+                "reference": "b426cf9a4d6da64065ecef4a0d65aafbbcfa9045"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-matrix-fieldtype/zipball/c8c2f9842b979163849f7eaf3f16ad277c1d4d73",
-                "reference": "c8c2f9842b979163849f7eaf3f16ad277c1d4d73",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-matrix-fieldtype/zipball/b426cf9a4d6da64065ecef4a0d65aafbbcfa9045",
+                "reference": "b426cf9a4d6da64065ecef4a0d65aafbbcfa9045",
                 "shasum": ""
             },
             "require": {
-                "ezsystems/ezpublish-kernel": "^8.0",
+                "ezsystems/ezplatform-content-forms": "^1.0@dev",
+                "ezsystems/ezplatform-graphql": "^2.0@dev",
+                "ezsystems/ezpublish-kernel": "^8.0@dev",
                 "php": "^7.3",
                 "symfony/config": "^4.3",
                 "symfony/console": "^4.3",
@@ -2077,7 +2142,9 @@
                 "symfony/yaml": "^4.3"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.15"
+                "ezsystems/ezplatform-code-style": "^0.1.0",
+                "friendsofphp/php-cs-fixer": "^2.16.0",
+                "phpunit/phpunit": "^6.4"
             },
             "type": "library",
             "extra": {
@@ -2102,7 +2169,7 @@
                 }
             ],
             "description": "Repository dedicated to Matrix Field Type for eZ Platform",
-            "time": "2019-09-30T18:31:41+00:00"
+            "time": "2020-01-13T11:58:53+00:00"
         },
         {
             "name": "ezsystems/ezplatform-rest",
@@ -2172,25 +2239,25 @@
         },
         {
             "name": "ezsystems/ezplatform-richtext",
-            "version": "v2.0.0-beta2",
+            "version": "v2.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-richtext.git",
-                "reference": "d86235a4b868960684606a1720ac09b6a1f31cce"
+                "reference": "5e174e88a92d6da8151175cbf210b4b8a98f83aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-richtext/zipball/d86235a4b868960684606a1720ac09b6a1f31cce",
-                "reference": "d86235a4b868960684606a1720ac09b6a1f31cce",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-richtext/zipball/5e174e88a92d6da8151175cbf210b4b8a98f83aa",
+                "reference": "5e174e88a92d6da8151175cbf210b4b8a98f83aa",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-xsl": "*",
                 "ezsystems/doctrine-dbal-schema": "^1.0",
+                "ezsystems/ezplatform-content-forms": "^1.0",
                 "ezsystems/ezplatform-rest": "^1.0",
                 "ezsystems/ezpublish-kernel": "^8.0",
-                "ezsystems/repository-forms": "^3.0",
                 "php": "^7.3",
                 "symfony/cache": "^4.3",
                 "symfony/config": "^4.3",
@@ -2207,9 +2274,12 @@
                 "twig/twig": "^2.11"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "~2.15.0",
+                "ezsystems/ezplatform-code-style": "^0.1",
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "matthiasnoback/symfony-config-test": "^4.1",
                 "matthiasnoback/symfony-dependency-injection-test": "~3.0",
-                "phpunit/phpunit": "^7.0"
+                "phpunit/phpunit": "^7.0",
+                "symfony/finder": "^4.3"
             },
             "type": "ezplatform-bundle",
             "extra": {
@@ -2231,7 +2301,7 @@
             ],
             "description": "eZ Platform RichText Extension, including the RichText FieldType.",
             "homepage": "https://ezplatform.com",
-            "time": "2019-09-30T18:35:12+00:00"
+            "time": "2019-12-23T13:11:24+00:00"
         },
         {
             "name": "ezsystems/ezplatform-solr-search-engine",
@@ -2335,16 +2405,16 @@
         },
         {
             "name": "ezsystems/ezplatform-user",
-            "version": "v2.0.0-beta3",
+            "version": "v2.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-user.git",
-                "reference": "adac93b13b678d48ba5484e04d16569572c9202c"
+                "reference": "0ee77aad27d6a7cce59e2f0c7e60688afea2c3d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-user/zipball/adac93b13b678d48ba5484e04d16569572c9202c",
-                "reference": "adac93b13b678d48ba5484e04d16569572c9202c",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-user/zipball/0ee77aad27d6a7cce59e2f0c7e60688afea2c3d4",
+                "reference": "0ee77aad27d6a7cce59e2f0c7e60688afea2c3d4",
                 "shasum": ""
             },
             "require": {
@@ -2368,8 +2438,7 @@
                 "twig/twig": "^2.11"
             },
             "require-dev": {
-                "ezsystems/ezplatform-code-style": "^0.1.0",
-                "friendsofphp/php-cs-fixer": "^2.16.0",
+                "friendsofphp/php-cs-fixer": "~2.15.0",
                 "phpunit/phpunit": "^8.2"
             },
             "type": "ezplatform-bundle",
@@ -2389,7 +2458,7 @@
                 "GPL-2.0-only"
             ],
             "description": "eZ Platform User bundle",
-            "time": "2019-12-23T13:30:21+00:00"
+            "time": "2019-09-30T18:41:34+00:00"
         },
         {
             "name": "ezsystems/ezpublish-kernel",
@@ -13773,25 +13842,21 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "alpha",
     "stability-flags": {
         "ezsystems/doctrine-dbal-schema": 10,
         "ezsystems/ez-support-tools": 10,
-        "ezsystems/ezplatform-admin-ui": 10,
         "ezsystems/ezplatform-admin-ui-assets": 15,
         "ezsystems/ezplatform-admin-ui-modules": 10,
-        "ezsystems/ezplatform-core": 10,
         "ezsystems/ezplatform-cron": 10,
         "ezsystems/ezplatform-design-engine": 10,
-        "ezsystems/ezplatform-graphql": 10,
+        "ezsystems/ezplatform-graphql": 20,
         "ezsystems/ezplatform-http-cache": 10,
-        "ezsystems/ezplatform-matrix-fieldtype": 10,
+        "ezsystems/ezplatform-matrix-fieldtype": 20,
         "ezsystems/ezplatform-rest": 10,
         "ezsystems/ezplatform-richtext": 10,
         "ezsystems/ezplatform-solr-search-engine": 10,
         "ezsystems/ezplatform-standard-design": 10,
-        "ezsystems/ezplatform-user": 10,
-        "ezsystems/ezpublish-kernel": 10,
         "ezsystems/repository-forms": 10,
         "ezsystems/behatbundle": 10
     },

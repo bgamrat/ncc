@@ -49,5 +49,3 @@ services:
         arguments:
             $baseDir: '%kernel.project_dir%/public/pdf'
         tags: ['controller.service_arguments']
-
-

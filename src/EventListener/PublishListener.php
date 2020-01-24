@@ -3,7 +3,7 @@
 namespace App\EventListener;
 
 use eZ\Publish\API\Repository\LocationService;
-use EzSystems\RepositoryForms\Event\FormActionEvent;
+use EzSystems\EzPlatformContentForms\Event\FormActionEvent;
 use eZ\Publish\Core\MVC\Symfony\Routing\UrlAliasRouter;
 
 class PublishListener {

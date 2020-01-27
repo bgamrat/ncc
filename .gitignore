@@ -109,3 +109,6 @@ behat.yml
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+
+/nbproject/
+/public/pdf/

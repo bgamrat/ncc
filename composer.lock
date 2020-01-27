@@ -1605,12 +1605,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-admin-ui.git",
-                "reference": "0d19a933d77c608de4e6b925a679e477ed4d9194"
+                "reference": "9d581f79982fcc2ddaba39dc1f655ee148d46454"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-admin-ui/zipball/0d19a933d77c608de4e6b925a679e477ed4d9194",
-                "reference": "0d19a933d77c608de4e6b925a679e477ed4d9194",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-admin-ui/zipball/9d581f79982fcc2ddaba39dc1f655ee148d46454",
+                "reference": "9d581f79982fcc2ddaba39dc1f655ee148d46454",
                 "shasum": ""
             },
             "require": {
@@ -1671,7 +1671,7 @@
                 "GPL-2.0-only"
             ],
             "description": "eZ Platform Admin v2",
-            "time": "2020-01-22T11:18:30+00:00"
+            "time": "2020-01-24T13:11:23+00:00"
         },
         {
             "name": "ezsystems/ezplatform-admin-ui-assets",
@@ -1716,12 +1716,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-admin-ui-modules.git",
-                "reference": "0bdf49918e6d80e293298cf48691d05d20ba8575"
+                "reference": "29713612e1dd89015c47bb74126670429c532917"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-admin-ui-modules/zipball/0bdf49918e6d80e293298cf48691d05d20ba8575",
-                "reference": "0bdf49918e6d80e293298cf48691d05d20ba8575",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-admin-ui-modules/zipball/29713612e1dd89015c47bb74126670429c532917",
+                "reference": "29713612e1dd89015c47bb74126670429c532917",
                 "shasum": ""
             },
             "require": {
@@ -1755,7 +1755,7 @@
                 }
             ],
             "description": "External assets dependencies for EzPlatform AdminUI",
-            "time": "2020-01-21T10:50:02+00:00"
+            "time": "2020-01-24T11:52:13+00:00"
         },
         {
             "name": "ezsystems/ezplatform-content-forms",
@@ -2123,12 +2123,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-matrix-fieldtype.git",
-                "reference": "b426cf9a4d6da64065ecef4a0d65aafbbcfa9045"
+                "reference": "06dc6c2100ec5bbca0119027baf471ad3cb3fb41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-matrix-fieldtype/zipball/b426cf9a4d6da64065ecef4a0d65aafbbcfa9045",
-                "reference": "b426cf9a4d6da64065ecef4a0d65aafbbcfa9045",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-matrix-fieldtype/zipball/06dc6c2100ec5bbca0119027baf471ad3cb3fb41",
+                "reference": "06dc6c2100ec5bbca0119027baf471ad3cb3fb41",
                 "shasum": ""
             },
             "require": {
@@ -2172,7 +2172,7 @@
                 }
             ],
             "description": "Repository dedicated to Matrix Field Type for eZ Platform",
-            "time": "2020-01-13T11:58:53+00:00"
+            "time": "2020-01-24T09:14:44+00:00"
         },
         {
             "name": "ezsystems/ezplatform-query-fieldtype",
@@ -2533,12 +2533,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezpublish-kernel.git",
-                "reference": "8ba4f1a61d80e40b684b5264293ed16717daabab"
+                "reference": "32a73c222df1f7e029195cfc89470e0ad040e6d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezpublish-kernel/zipball/8ba4f1a61d80e40b684b5264293ed16717daabab",
-                "reference": "8ba4f1a61d80e40b684b5264293ed16717daabab",
+                "url": "https://api.github.com/repos/ezsystems/ezpublish-kernel/zipball/32a73c222df1f7e029195cfc89470e0ad040e6d5",
+                "reference": "32a73c222df1f7e029195cfc89470e0ad040e6d5",
                 "shasum": ""
             },
             "require": {
@@ -2636,7 +2636,7 @@
             ],
             "description": "Kernel used by ezsystems/ezplatform and derivatives. Provides the Content Repository, its APIs, and the application's Symfony framework integration.",
             "homepage": "https://ezplatform.com",
-            "time": "2020-01-22T11:35:00+00:00"
+            "time": "2020-01-24T12:31:49+00:00"
         },
         {
             "name": "friendsofsymfony/http-cache",
@@ -11471,12 +11471,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/BehatBundle.git",
-                "reference": "2568b3a8611a1f3ae6c4c6d99c5e33f0fac6e0e3"
+                "reference": "3b4549b6fab763b90ada5757e104a814ee8f7e4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/BehatBundle/zipball/2568b3a8611a1f3ae6c4c6d99c5e33f0fac6e0e3",
-                "reference": "2568b3a8611a1f3ae6c4c6d99c5e33f0fac6e0e3",
+                "url": "https://api.github.com/repos/ezsystems/BehatBundle/zipball/3b4549b6fab763b90ada5757e104a814ee8f7e4a",
+                "reference": "3b4549b6fab763b90ada5757e104a814ee8f7e4a",
                 "shasum": ""
             },
             "require": {
@@ -11531,7 +11531,7 @@
                 }
             ],
             "description": "Behat bundle for help testing eZ Bundles and projects",
-            "time": "2019-12-21T13:57:21+00:00"
+            "time": "2020-01-24T15:04:02+00:00"
         },
         {
             "name": "fabpot/goutte",

@@ -1,0 +1,143 @@
+{% extends "@ezdesign/document.html.twig" %}
+{% block content %}
+<header class="page-header row">
+    <span class="col-md">
+        <img src="{{ asset("/assets/images/logo.jpg") }}" class="img-fluid" alt="NCC logo">
+    </span>
+    <h1 class="col-md text-right">
+        {{ ez_content_name( content ) }}<br>
+        <small>{{ ez_render_field(content, 'course_title') }}</small>
+    </h1>
+</header>
+<article class="container" id="main-content">
+    <h2 class="d-inline-block">{{ 'Course Outline' | trans }}</h2>
+    <section class="row my-3 border border-secondary">
+        <div class="course-outline-header w-100">
+            <div class="row m-0 border-bottom">
+                <div class="col-3">
+                    <strong>{{ 'Course Title' | trans }}</strong>
+                </div>
+                <div class="col">
+                    {{ ez_render_field(content, 'course_title') }}
+                </div>
+            </div>
+            <div class="row m-0 border-bottom">
+                <div class="col">
+                    <span class="font-weight-bold">{{ 'Course Number' | trans }}</span>
+                    {{ ez_render_field(content, 'course_number') }}
+                </div>
+                <div class="col">
+                    <span class="font-weight-bold">{{ 'Lecture Hours'|trans }}</span>
+                    {{ ez_render_field(content, 'lecture_hours') }}
+                </div>
+                <div class="col">
+                    <span class="font-weight-bold">{{ 'Lab Hours'|trans }}</span>
+                    {{ ez_render_field(content, 'lab_hours') }}
+                </div>
+                <div class="col">
+                    <span class="font-weight-bold">{{ 'Credit'|trans }}</span>
+                    {{ ez_render_field(content, 'credit_hours') }}
+                </div>
+            </div>
+            <div class="row m-0 border-bottom">
+                <div class="col-3">
+                    <span class="font-weight-bold">
+                        {{ 'Department'|trans }}
+                    </span>
+                </div>
+                <div class="col">
+                    {{ render_esi(controller('ez_content:viewAction', {locationId: departmentId, viewType: 'line'} )) }}
+                </div>
+            </div>
+            <div class="row m-0">
+                <div class="col-3">
+                    <span class="font-weight-bold">
+                        {{ 'Program'|trans }}
+                    </span>
+                </div>
+                <div class="col">
+                    {{ render_esi(controller('ez_content:viewAction', {locationId: programId, viewType: 'line'} )) }}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="row my-3 border border-secondary">
+        {% if not ez_field_is_empty(content,'prerequisites') %}
+        <div class="col">
+            <strong>{{ 'Prerequisites'|trans }}</strong>
+            {{ ez_render_field(content, 'prerequisites') }}
+        </div>
+        {% endif %}
+        {% if not ez_field_is_empty(content,'corequisites') %}
+        <div class="col">
+            <strong>{{ 'Corequisites'|trans }}</strong>
+            {{ ez_render_field(content, 'corequisites') }}
+        </div>
+        {% endif %}
+        {% if not ez_field_is_empty(content,'accuplacer') %}
+        <div class="col">
+            <strong>{{ 'AccuPlacer'|trans }}</strong>
+            {{ ez_render_field(content, 'accuplacer') }}
+        </div>
+        {% endif %}
+    </section>
+    {% if not ez_field_is_empty(content,'prerequisites_corequisites_text') %}
+        <section class="row my-3 border border-secondary">
+            <div class="col">
+                <strong>{{ 'Prerequisites / Corequisites'|trans }}</strong>
+                {{ ez_render_field(content, 'prerequisites_corequisites_text') }}
+            </div>
+        </section>
+    {% endif %}
+    <section class="row my-3 border border-secondary">
+        <div class="col">
+            <strong>{{ 'Entrance Skills'|trans }}</strong>
+            {{ ez_render_field(content, 'entrance_skills') }}
+        </div>
+    </section>
+    <section class="row my-3 border border-secondary">
+        <div class="col">
+            <strong>{{ 'Catalog Description'|trans }}</strong>
+            {{ ez_render_field(content, 'catalog_description') }}
+        </div>
+    </section>
+    <section class="row course-competencies my-3 border border-secondary">
+        <div class="col">
+            <strong>{{ 'Course Competencies'|trans }}</strong>
+            {{ ez_render_field(content, 'course_competencies', { 'attr': { 'class': 'with-borders'}}) }}
+        </div>
+    </section>
+    <section class="row course-outline my-3 border border-secondary">
+        <div class="col">
+            <strong>{{ 'Course Outline'|trans }}</strong>
+            {{ ez_render_field(content, 'course_outline') }}
+        </div>
+    </section>
+    <section class="row my-3 border border-secondary">
+        <div class="col">
+            <strong>{{ 'Performance Evaluation'|trans }}</strong>
+            {{ ez_render_field(content, 'performance_evaluation') }}
+        </div>
+    </section>
+    <section class="row my-3 border border-secondary">
+        <div class="col">
+            <strong>{{ 'Method of Instruction'|trans }}</strong>
+            {{ ez_render_field(content, 'method_of_instruction') }}
+        </div>
+    </section>
+    <section class="row my-3 border border-secondary">
+        <div class="col">
+            <strong>{{ 'Instructional Facilities'|trans }}</strong>
+            {{ ez_render_field(content, 'instructional_facilities') }}
+        </div>
+    </section>
+    <section class="row revision-history my-3 border border-secondary">
+        <div class="col">
+            <strong>{{ 'Revision History'|trans }}</strong>
+            {{ ez_render_field(content, 'revision_history', { 'attr': { 'class': 'with-borders'}}) }}
+        </div>
+    </section>
+</article>
+<footer class="fixed-bottom page-footer row">
+</footer>
+{% endblock %}

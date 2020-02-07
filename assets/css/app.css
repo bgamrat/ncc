@@ -1,0 +1,28 @@
+body {
+    font-family: 'Open Sans',sans-serif;
+    /* Colors */
+    --main-logo-color: #02448b;
+    --header-footer-bg-color: #fff;
+    --heading-color: #499f8c;
+}
+.page-header {
+    border-bottom: 1px solid var(--main-logo-color);
+    background-color: var(--header-footer-bg-color);
+    padding: 10px;
+}
+.page-header h1 {
+    color: var(--heading-color);
+    /*line-height: 100px;*/
+    font-variant: small-caps;
+    font-weight: 900;
+}
+#main-content {
+    padding: 15px;
+    overflow-x: auto;
+    background-color: #fff;
+}
+.page-footer {
+    border-top: 1px solid var(--main-logo-color);
+    height: 37px;
+    background-color: var(--header-footer-bg-color);
+}

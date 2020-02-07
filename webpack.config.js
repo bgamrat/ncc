@@ -11,6 +11,15 @@ Encore.setOutputPath('public/assets/build')
     .enableSassLoader()
     .enableReactPreset()
     .enableSingleRuntimeChunk();
+    //.enableVueLoader()
+    .addEntry('app', './assets/js/app.js')
+    .addEntry('content', './assets/js/content.js')
+    .addEntry('sign', './assets/js/sign.js')
+    .enableSingleRuntimeChunk();
+
+const projectConfig = Encore.getWebpackConfig();
+
+module.exports = [ eZConfig, ...customConfigs, projectConfig ];
 
 // Put your config here.
 
@@ -19,4 +28,6 @@ Encore.setOutputPath('public/assets/build')
 // module.exports = [ eZConfig, ...customConfigs, projectConfig ];
 
 // comment-out this line if you've uncommented the above lines
+
 module.exports = [ eZConfig, ...customConfigs ];
+

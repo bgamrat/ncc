@@ -6,4 +6,3 @@ pdf:
      controller: App\Controller\PdfController::pdfViewAction
      requirements:
         path: .+
-

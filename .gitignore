@@ -110,6 +110,7 @@ translations/
 
 
 ###> symfony/framework-bundle ###
+/.env
 /.env.local
 /.env.local.php
 /.env.*.local
@@ -148,3 +149,6 @@ behat.yml
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+
+/nbproject/
+/public/pdf/

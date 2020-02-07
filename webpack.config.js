@@ -10,6 +10,7 @@ Encore.setOutputPath('public/assets/build')
     .setPublicPath('/assets/build')
     .enableSassLoader()
     .enableReactPreset()
+    .enableSingleRuntimeChunk();
     //.enableVueLoader()
     .addEntry('app', './assets/js/app.js')
     .addEntry('content', './assets/js/content.js')
@@ -27,5 +28,6 @@ module.exports = [ eZConfig, ...customConfigs, projectConfig ];
 // module.exports = [ eZConfig, ...customConfigs, projectConfig ];
 
 // comment-out this line if you've uncommented the above lines
-//module.exports = [ eZConfig, ...customConfigs ];
+
+module.exports = [ eZConfig, ...customConfigs ];
 

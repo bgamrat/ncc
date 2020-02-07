@@ -26,6 +26,16 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    # Those service definitions were added to fix missing command registration in an external package
+    JMS\TranslationBundle\Command\ExtractTranslationCommand:
+        tags:
+            - { name: console.command }
+
+    JMS\TranslationBundle\Command\ResourcesListCommand:
+        tags:
+            - { name: console.command }
+
     App\QueryType\LocationChildrenQueryType:
         tags:
             - { name: ezpublish.query_type }
@@ -49,3 +59,4 @@ services:
         arguments:
             $baseDir: '%kernel.project_dir%/public/pdf'
         tags: ['controller.service_arguments']
+

@@ -1,6 +1,5 @@
 {
     "name": "ezsystems/ezplatform",
-    "minimum-stability": "beta",
     "description": "eZ Platform distribution",
     "homepage": "https://github.com/ezsystems/ezplatform",
     "license": "GPL-2.0-only",
@@ -36,6 +35,7 @@
         "ezsystems/ezpublish-kernel": "^8.0@dev",
         "friendsofsymfony/jsrouting-bundle": "^2.3",
         "knplabs/knp-menu-bundle": "^2.2",
+        "knplabs/knp-snappy": "^1.2",
         "knplabs/knp-snappy-bundle": "^1.7",
         "monolog/monolog": "^1.25.2",
         "php-http/guzzle6-adapter": "^2.0",

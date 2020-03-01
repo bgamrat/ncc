@@ -10,24 +10,18 @@ Encore.setOutputPath('public/assets/build')
     .setPublicPath('/assets/build')
     .enableSassLoader()
     .enableReactPreset()
-    .enableSingleRuntimeChunk();
-    //.enableVueLoader()
     .addEntry('app', './assets/js/app.js')
     .addEntry('content', './assets/js/content.js')
     .addEntry('sign', './assets/js/sign.js')
     .enableSingleRuntimeChunk();
 
-const projectConfig = Encore.getWebpackConfig();
-
-module.exports = [ eZConfig, ...customConfigs, projectConfig ];
-
 // Put your config here.
 
 // uncomment the two lines below, if you added a new entry (by Encore.addEntry() or Encore.addStyleEntry() method) to your own Encore configuration for your project
-// const projectConfig = Encore.getWebpackConfig();
-// module.exports = [ eZConfig, ...customConfigs, projectConfig ];
+const projectConfig = Encore.getWebpackConfig();
+module.exports = [ eZConfig, ...customConfigs, projectConfig ];
 
 // comment-out this line if you've uncommented the above lines
 
-module.exports = [ eZConfig, ...customConfigs ];
+// module.exports = [ eZConfig, ...customConfigs ];
 

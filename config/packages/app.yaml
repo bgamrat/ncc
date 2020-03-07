@@ -6,6 +6,24 @@ ezplatform:
     system:
         site:
             languages: [eng-US]
+            image_variations:
+                small:
+                    reference: null
+                    filters:
+                        - { name: geometry/scaledownonly, params: [100, 160] }
+                medium:
+                    reference: null
+                    filters:
+                        - { name: geometry/scaledownonly, params: [200, 290] }
+                listitem:
+                    reference: null
+                    filters:
+                        - { name: geometry/scaledownonly, params: [130, 190] }
+                articleimage:
+                    reference: null
+                    filters:
+                        - { name: geometry/scalewidth, params: [770] }
+
 
 ezdesign:
     design_list:

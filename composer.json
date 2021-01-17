@@ -1,8 +1,6 @@
 {
-    "name": "ezsystems/ezplatform",
-    "description": "eZ Platform distribution",
     "homepage": "https://github.com/ezsystems/ezplatform",
-    "license": "GPL-2.0-only",
+    "license": "proprietary",
     "type": "project",
     "authors": [
         {
@@ -144,9 +142,6 @@
         "symfony": {
             "allow-contrib": true,
             "require": "~5.1.0"
-        },
-        "branch-alias": {
-            "dev-master": "3.2.x-dev"
         }
     }
 }

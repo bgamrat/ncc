@@ -1,0 +1,31 @@
+{% extends '@ezdesign/pagelayout.html.twig' %}
+{% block content %}
+<article>
+    <h1>{{ ez_content_name( content ) }}</h1>
+    <div class="row">
+        <div class="col">
+            {{  ez_render_field(content, 'short_description') }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{  ez_render_field(content, 'description') }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if items is not empty %}
+                <ul>
+                    {% for item in items.searchHits %}
+                        {% set contentInfo = item.valueObject.contentInfo %}
+                        {% set contentObject = item.valueObject.content %}
+                        <li>
+                            <a href={{ path('ez_urlalias', {'contentId': contentInfo.id}) }}>{{ ez_content_name(contentInfo) }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</article>
+{% endblock %}

@@ -1,0 +1,28 @@
+@media print {
+    .no-print {
+        display: none;
+    }
+    @page {
+        margin: .75in;
+        size: 8.5in 11in;
+    }
+    html {
+        font-size: 12pt;
+    }
+    body { 
+
+    }
+    a {
+        text-decoration: none !important;
+        color: #000;
+    }
+    .course-calendar {
+	page-break-before: always;
+    }
+    .sf-toolbar {
+        display: none !important;
+    }
+    .sf-minitoolbar {
+        display: none !important;
+    }
+}

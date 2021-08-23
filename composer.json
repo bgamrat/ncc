@@ -1,8 +1,6 @@
 {
-    "name": "ezsystems/ezplatform",
-    "description": "eZ Platform distribution",
     "homepage": "https://github.com/ezsystems/ezplatform",
-    "license": "GPL-2.0-only",
+    "license": "proprietary",
     "type": "project",
     "authors": [
         {
@@ -37,8 +35,9 @@
         "friendsofsymfony/jsrouting-bundle": "^2.7",
         "hautelook/templated-uri-bundle": "^3.3",
         "knplabs/knp-menu-bundle": "^3.1",
-        "lexik/jwt-authentication-bundle": "^2.10",
-        "monolog/monolog": "^2.1",
+        "knplabs/knp-snappy-bundle": "^1.8",
+        "lexik/jwt-authentication-bundle": "^2.6",
+        "monolog/monolog": "^2.0",
         "php-http/guzzle6-adapter": "^2.0",
         "platformsh/symfonyflex-bridge": "^2.2",
         "sensio/framework-extra-bundle": "^5.6",
@@ -141,9 +140,6 @@
         "symfony": {
             "allow-contrib": true,
             "require": "~5.2.1"
-        },
-        "branch-alias": {
-            "dev-master": "3.3.x-dev"
         }
     }
 }

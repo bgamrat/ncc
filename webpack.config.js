@@ -22,17 +22,18 @@ Encore.addEntry('welcome_page', [
     path.resolve(__dirname, './assets/scss/welcome-page.scss'),
 ]);
 
-// Put your config here.
-Encore.addEntry('app_js', [
-    path.resolve(__dirname, './assets/app.js'),
+
+Encore.addEntry('content', [
+    path.resolve(__dirname, './assets/css/app.css'),
+    path.resolve(__dirname, './assets/css/content.css'),
+    path.resolve(__dirname, './assets/css/print.css')
 ]);
 
-Encore.addEntry('app_styles', [
-    path.resolve(__dirname, './assets/styles/app.css'),
+Encore.addEntry('app', [
+    path.resolve(__dirname, './assets/css/app.css'),
 ]);
 
+// uncomment the two lines below, if you added a new entry (by Encore.addEntry() or Encore.addStyleEntry() method) to your own Encore configuration for your project
 const projectConfig = Encore.getWebpackConfig();
 module.exports = [ eZConfig, ...customConfigs, projectConfig ];
 
-// uncomment this line if you've commented-out the above lines
-// module.exports = [ eZConfig, ...customConfigs ];

@@ -1,0 +1,32 @@
+strong, em {
+    color: #1f487c;
+}
+h1, h2, h3, h4 {
+    color: #036;
+    font-weight: 600;
+}
+h2 {
+    font-size: 1.75rem;
+}
+h2.policies {
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 9px;
+}
+.course-outline-header p,
+.syllabus-header p {
+    padding: 0;
+    margin: 0;
+}
+table.with-borders {
+    width: 100%;
+    margin: 15px 0;
+}
+table.with-borders tr {
+    border: 1px solid;
+}
+table.with-borders th,
+table.with-borders td {
+    border: 1px solid;
+    padding: 3px;
+}

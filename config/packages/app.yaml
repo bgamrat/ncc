@@ -94,4 +94,6 @@ ezpublish:
                         params:
                             availableSupportServicesId: 70
                             collegePoliciesId: 52
+                            diversityEquityAndInclusionId: 181
                             gradingSchemeId: 85
+                            technologyId: 180

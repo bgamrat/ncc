@@ -4,7 +4,7 @@ knp_snappy:
         enabled:    true
         binary:     '%env(WKHTMLTOPDF_PATH)%'
         options:
-            - { name: 'print-media-type', value: null }
+            - { name: 'print-media-type', value: true }
             - { name: 'lowquality', value: false }
             - { name: 'margin-left', value: '.5in' }
             - { name: 'margin-right', value: '.5in' }

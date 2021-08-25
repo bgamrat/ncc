@@ -42,7 +42,7 @@ class DefaultController extends Controller {
     }
 
     public function syllabusViewEnhancedAction(ContentView $view,
-            int $availableSupportServicesId, int $collegePoliciesId, int $gradingSchemeId) {
+            int $availableSupportServicesId, int $collegePoliciesId, int $diversityEquityAndInclusionId, int $gradingSchemeId, int $technologyId) {
         $location = $view->getLocation();
         $content = $view->getContent();
         $course = $content->getField('course');
@@ -50,12 +50,16 @@ class DefaultController extends Controller {
         $courseContentInfo = $courseContent->getVersionInfo()->getContentInfo();
         $courseLocation = $this->locationService->loadLocation($courseContentInfo->mainLocationId);
 
-        $parameters = $this->_getRelated($courseLocation);
+
+        $parameters = $this->_getRelatedCourse($courseLocation);
         $parameters = $parameters + [
+            'termAndYear' => $this->_getTermAndYear($location),
             'availableSupportServices' => $this->contentService->loadContent($availableSupportServicesId),
             'collegePolicies' => $this->contentService->loadContent($collegePoliciesId),
             'departmentPolicies' => $this->contentService->loadContent($parameters['departmentPoliciesId']),
+            'diversityEquityAndInclusion' => $this->contentService->loadContent($diversityEquityAndInclusionId),
             'gradingScheme' => $this->contentService->loadContent($gradingSchemeId),
+            'technology' => $this->contentService->loadContent($technologyId),
             'courseContentInfo' => $courseContentInfo,
             'course' => $courseContent,
         ];
@@ -65,7 +69,14 @@ class DefaultController extends Controller {
         return $view;
     }
 
-    private function _getRelated(Location $location) {
+    private function _getTermAndYear(Location $location) {
+        $node = $this->locationService->loadLocation($location->parentLocationId);
+        $contentId = $node->getContent()->id;
+        $content = $this->contentService->loadContent($contentId);
+        return implode(' ',array_reverse(explode(' ',$content->getName())));
+    }
+
+    private function _getRelatedCourse(Location $location) {
         $rootLocationId = (string) $this->getConfigResolver()->getParameter('content.tree_root.location_id');
         $locationIds = array_reverse(explode('/', trim($location->pathString, '/')));
         $i = 0;
@@ -95,20 +106,20 @@ class DefaultController extends Controller {
             $items[] = $searchHit;
         }
         $departmentPoliciesId = $items[0]->valueObject->id;
-        
+
         $this->pdfUrl = $this->router->generate(
                 UrlAliasRouter::URL_ALIAS_ROUTE_NAME,
                 ['locationId' => $location->id]
         );
-        
+
         $scheme = 'http';
         if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
             $scheme .= 's';
         }
         $httpHost = $_SERVER['HTTP_HOST'];
-        
+
         return ['scheme' => $scheme,
-            'httpHost' => $httpHost, 
+            'httpHost' => $httpHost,
             'departmentId' => $departmentId, 'programId' => $programId, 'departmentPoliciesId' => $departmentPoliciesId, 'pdf_url' => $this->pdfUrl];
     }
 

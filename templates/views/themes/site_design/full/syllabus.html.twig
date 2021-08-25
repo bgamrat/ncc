@@ -1,157 +1,171 @@
 {% extends "@ezdesign/document.html.twig" %}
 {% block content %}
-<article class="container">
-    <section class="syllabus-header">
-        <table class="table table-sm table-bordered">
-            <thead>
-                <tr>
-                    <th>
-                        
-                        <img src="{{ asset("assets/images/logo.jpg") }}" class="img-fluid" alt="NCC logo">
-                    </th>
-                    <th>
-                        <h1>
-                            {{ ez_render_field(course, 'course_number') }}<br>
-                            <small>{{ ez_render_field(course, 'course_title') }}</small>
-                        </h1>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">
-                        {{ 'Department' | trans }}
-                    </th>
-                    <td>
-                        {{ render_esi(controller('ez_content:viewAction', {locationId: departmentId, viewType: 'line'} )) }}
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        {{ 'Instructor' | trans }}
-                    </th>
-                    <td>
-                        {{ ez_render_field(content, 'instructor') }}
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        {{ 'NCC Email' | trans }}
-                    </th>
-                    <td>
-                        {{ ez_render_field(content, 'email') }}
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        {{ 'Telephone Number' | trans }}
-                    </th>
-                    <td>
-                        {{ ez_render_field(content, 'phone') }}
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        {{ 'Office Hours' | trans }}
-                    </th>
-                    <td>
-                        {{ ez_render_field(content, 'office_hours') }}
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        {{ 'Office Location' | trans }}
-                    </th>
-                    <td>
-                        {{ ez_render_field(content, 'office_location') }}
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        {{ 'Class Days/Meeting Time' | trans }}
-                    </th>
-                    <td>
-                        {{ ez_render_field(content, 'class_days_meeting_time') }}
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        {{ 'Class Location' | trans }}
-                    </th>
-                    <td>
-                        {{ ez_render_field(content, 'class_location') }}
-                    </td>
-               </tr>
-            </tbody>
-        </table>
-    </section>
-    <section class="row my-3">
-        <div class="col">
-            <h2>{{ 'Rationale' | trans }}</h2>
-            {{ ez_render_field(content, 'rationale') }}
-        </div>
-    </section>
-    <section class="row my-3">
-        <div class="col">
-            <h2>{{ 'Course Description' | trans }}</h2>
-            {{ ez_render_field(course, 'catalog_description') }}
-        </div>
-    </section>
-    <section class="course-competencies row my-3">
-        <div class="col">
-            <h2>{{ 'Course Competencies' | trans }}</h2>
-            {{ ez_render_field(course, 'course_competencies', { 'attr': { 'class': 'with-borders'}}) }}
-        </div>
-    </section>
-    <section class="row my-3">
-        <div class="col">
-            <h2>{{ 'Essential Questions' | trans }}</h2>
-            {{ ez_render_field(content, 'essential_questions') }}
-        </div>
-    </section>
-    <section class="row my-3">
-        <div class="col">
-            <h2>{{ 'Required Textbook(s)' | trans }}</h2>
-            {{ ez_render_field(content, 'required_textbook') }}
-        </div>
-    </section>
-    <section class="row my-3">
-        <div class="col">
-            <h2>{{ 'Course Expectations' | trans }}</h2>
-            {{ ez_render_field(content, 'course_expectations') }}
-        </div>
-    </section>
-    <section class="row my-3">
-        <div class="col">
-            <h2>{{ 'Grading' | trans }}</h2>
-            {{ ez_render_field(content, 'grading') }}
-            {{ ez_render_field(gradingScheme, 'body') }}
-        </div>
-    </section>
-    <section class="row my-3">
-        <div class="col">
-            <h2 class="policies">{{ 'Available Support Services' | trans }}</h2>
-            {{ ez_render_field(availableSupportServices, 'body') }}
-        </div>
-    </section>
-    <section class="row my-3">
-        <div class="col">
-            <h2 class="policies">{{ 'Department Policies' | trans }}</h2>
-            {{ ez_render_field(departmentPolicies, 'body') }}
-        </div>
-    </section>
-    <section class="row my-3">
-        <div class="col">
-            <h2 class="policies">{{ 'College Policies' | trans }}</h2>
-            {{ ez_render_field(collegePolicies, 'body') }}
-        </div>
-    </section>
-    <section class="course-calendar row my-3">
-        <div class="col">
-            <h2>{{ 'Course Calendar' | trans }}</h2>
-            {{ ez_render_field(content, 'course_calendar', { 'attr': { 'class': 'with-borders'}}) }}
-            <p class="font-italic">The schedule is subject (and likely) to change.</p>
-        </div>
-    </section>
-</article>
+    <article class="container">
+        <section class="syllabus-header">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th class="align-top">
+                            <img src="{{ asset("assets/images/logo.jpg") }}" class="img-fluid" alt="NCC logo">
+                        </th>
+                        <th class="text-right">
+                            <h1>
+                                {{ ez_render_field(course, 'course_number') }} {{ ez_render_field(content, 'section') }}<br>
+                                <small>{{ ez_render_field(course, 'course_title') }}</small><br>
+                            </h1>
+                            <em>
+                                {{ termAndYear }}
+                            </em>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            {{ 'Department' | trans }}
+                        </th>
+                        <td>
+                            {{ render_esi(controller('ez_content:viewAction', {locationId: departmentId, viewType: 'line'} )) }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            {{ 'Instructor' | trans }}
+                        </th>
+                        <td>
+                            {{ ez_render_field(content, 'instructor') }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            {{ 'NCC Email' | trans }}
+                        </th>
+                        <td>
+                            {{ ez_render_field(content, 'email') }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            {{ 'Telephone Number' | trans }}
+                        </th>
+                        <td>
+                            {{ ez_render_field(content, 'phone') }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            {{ 'Office Hours' | trans }}
+                        </th>
+                        <td>
+                            {{ ez_render_field(content, 'office_hours') }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            {{ 'Office Location' | trans }}
+                        </th>
+                        <td>
+                            {{ ez_render_field(content, 'office_location') }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            {{ 'Class Days/Meeting Time' | trans }}
+                        </th>
+                        <td>
+                            {{ ez_render_field(content, 'class_days_meeting_time') }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            {{ 'Class Location' | trans }}
+                        </th>
+                        <td>
+                            {{ ez_render_field(content, 'class_location') }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="row my-3">
+            <div class="col">
+                <h2>{{ 'Rationale' | trans }}</h2>
+                {{ ez_render_field(content, 'rationale') }}
+            </div>
+        </section>
+        <section class="row my-3">
+            <div class="col">
+                <h2>{{ 'Course Description' | trans }}</h2>
+                {{ ez_render_field(course, 'catalog_description') }}
+            </div>
+        </section>
+        <section class="course-competencies row my-3">
+            <div class="col">
+                <h2>{{ 'Course Competencies' | trans }}</h2>
+                {{ ez_render_field(course, 'course_competencies', { 'attr': { 'class': 'with-borders'}}) }}
+            </div>
+        </section>
+        <section class="row my-3">
+            <div class="col">
+                <h2>{{ 'Essential Questions' | trans }}</h2>
+                {{ ez_render_field(content, 'essential_questions') }}
+            </div>
+        </section>
+        <section class="row my-3">
+            <div class="col">
+                <h2>{{ 'Required Materials' | trans }}</h2>
+                {{ ez_render_field(content, 'required_materials') }}
+                <h2>{{  'Technology' | trans }}</h2>
+                {{ ez_render_field(technology, 'body') }}
+                <h2>{{ 'Supplemental Materials' | trans }}</h2>
+                {{ ez_render_field(content, 'supplemental_materials') }}
+            </div>
+        </section>
+        <section class="row my-3">
+            <div class="col">
+                <h2>{{ 'Course Expectations' | trans }}</h2>
+                {{ ez_render_field(content, 'course_expectations') }}
+            </div>
+        </section>
+        <section class="row my-3">
+            <div class="col">
+                <h2>{{ 'Grading' | trans }}</h2>
+                {{ ez_render_field(content, 'grading') }}
+                {{ ez_render_field(gradingScheme, 'body') }}
+            </div>
+        </section>
+        <section class="row my-3">
+            <div class="col">
+                <h2 class="policies">{{ 'Diversity, Equity and Inclusion Statement' | trans }}</h2>
+                {{ ez_render_field(diversityEquityAndInclusion, 'body') }}
+            </div>
+        </section>
+        <section class="row my-3">
+            <div class="col">
+                <h2 class="policies">{{ 'Available Support Services' | trans }}</h2>
+                {{ ez_render_field(availableSupportServices, 'body') }}
+            </div>
+        </section>
+
+        <section class="row my-3">
+            <div class="col">
+                <h2 class="policies">{{ 'Department Policies' | trans }}</h2>
+                {{ ez_render_field(departmentPolicies, 'body') }}
+            </div>
+        </section>
+        <section class="row my-3">
+            <div class="col">
+                <h2 class="policies">{{ 'College Policies' | trans }}</h2>
+                {{ ez_render_field(collegePolicies, 'body') }}
+            </div>
+        </section>
+        <section class="course-calendar row my-3">
+            <div class="col">
+                <h2>{{ 'Course Calendar' | trans }}</h2>
+                {{ ez_render_field(content, 'course_calendar', { 'attr': { 'class': 'with-borders'}}) }}
+                <p>* {{ 'Targeted competencies refer to the established course competencies listed above.' | trans }}</p>
+                <p class="text-center font-weight-bold"><u>{{ 'The schedule is subject to change.' | trans }}</u></p>
+            </div>
+        </section>
+    </article>
 {% endblock %}

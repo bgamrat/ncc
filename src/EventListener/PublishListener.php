@@ -28,7 +28,8 @@ class PublishListener {
 
         if (in_array($contentInfo->contentTypeId, $this->pdfOnPublish)) {
             $location = $this->locationService->loadLocation($locationId);
-            $url = preg_replace('#^/admin#', '', $this->router->generate($location));
+            $url = preg_replace('#^/admin#', '', $this->router->generate(UrlAliasRouter::URL_ALIAS_ROUTE_NAME,
+                            ['locationId' => $location->id]));
             $pdfFilename = $this->basePath . $url . '.pdf';
             if (is_file($pdfFilename)) {
                 unlink($pdfFilename);

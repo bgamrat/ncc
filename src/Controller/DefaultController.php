@@ -36,6 +36,10 @@ class DefaultController extends Controller {
 
     public function courseViewEnhancedAction(ContentView $view) {
         $location = $view->getLocation();
+        $this->pdfUrl = $this->router->generate(
+                UrlAliasRouter::URL_ALIAS_ROUTE_NAME,
+                ['locationId' => $location->id]
+        );
         $view->addParameters($this->_getRelated($location));
         $this->_makePdf($view);
         return $view;
@@ -49,9 +53,11 @@ class DefaultController extends Controller {
         $courseContent = $this->contentService->loadContent($course->value->destinationContentId);
         $courseContentInfo = $courseContent->getVersionInfo()->getContentInfo();
         $courseLocation = $this->locationService->loadLocation($courseContentInfo->mainLocationId);
-
-
-        $parameters = $this->_getRelatedCourse($courseLocation);
+        $this->pdfUrl = $this->router->generate(
+                UrlAliasRouter::URL_ALIAS_ROUTE_NAME,
+                ['locationId' => $location->id]
+        );
+        $parameters = $this->_getRelated($courseLocation);
         $parameters = $parameters + [
             'termAndYear' => $this->_getTermAndYear($location),
             'availableSupportServices' => $this->contentService->loadContent($availableSupportServicesId),
@@ -73,10 +79,10 @@ class DefaultController extends Controller {
         $node = $this->locationService->loadLocation($location->parentLocationId);
         $contentId = $node->getContent()->id;
         $content = $this->contentService->loadContent($contentId);
-        return implode(' ',array_reverse(explode(' ',$content->getName())));
+        return implode(' ', array_reverse(explode(' ', $content->getName())));
     }
 
-    private function _getRelatedCourse(Location $location) {
+    private function _getRelated(Location $location) {
         $rootLocationId = (string) $this->getConfigResolver()->getParameter('content.tree_root.location_id');
         $locationIds = array_reverse(explode('/', trim($location->pathString, '/')));
         $i = 0;
@@ -106,11 +112,6 @@ class DefaultController extends Controller {
             $items[] = $searchHit;
         }
         $departmentPoliciesId = $items[0]->valueObject->id;
-
-        $this->pdfUrl = $this->router->generate(
-                UrlAliasRouter::URL_ALIAS_ROUTE_NAME,
-                ['locationId' => $location->id]
-        );
 
         $scheme = 'http';
         if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
